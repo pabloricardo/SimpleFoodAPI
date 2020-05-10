@@ -1,5 +1,6 @@
 package com.simple.api.foods.config;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +20,10 @@ public class TestConfig implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-//		Food f1 = new Food(null, "Chocolate", "Barra de chocolate", 4.90);
-//		Food f2 = new Food(null, "Pizza", "Quatro carnes", 39.90);
-//
-//		foodRepository.saveAll(Arrays.asList(f1,f2));
+		Food f1 = new Food(null, "Chocolate", "Barra de chocolate", new BigDecimal(4.90));
+		Food f2 = new Food(null, "Pizza", "Quatro carnes", new BigDecimal(39.90));
+
+		foodRepository.saveAll(Arrays.asList(f1,f2));
 	}
 	
 	

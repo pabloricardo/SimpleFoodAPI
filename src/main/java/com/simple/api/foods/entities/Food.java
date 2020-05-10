@@ -1,7 +1,9 @@
 package com.simple.api.foods.entities;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,12 +21,12 @@ public class Food implements Serializable {
 	private Integer id;
 	private String name;
 	private String description;
-	private Double price;
+	private BigDecimal price;
 	
 	public Food() {
 	}
 
-	public Food(Integer id, String name, String description, Double price) {
+	public Food(Integer id, String name, String description, BigDecimal price) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -32,11 +34,11 @@ public class Food implements Serializable {
 		this.price = price;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -56,11 +58,11 @@ public class Food implements Serializable {
 		this.description = description;
 	}
 
-	public Double getPrice() {
+	public BigDecimal getPrice() {
 		return price;
 	}
 
-	public void setPrice(Double price) {
+	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
 
