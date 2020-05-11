@@ -25,4 +25,33 @@ public class FoodService {
 		return obj.get();
 	}
 	
+	public Food findByName(String name) {
+		return foodRepository.findByName(name);
+	}
+	
+	public Food saveFood(Food food) {
+		return foodRepository.save(food);
+	}
+	
+	public List<Food> saveFoods(List<Food> Listfoods){
+		return foodRepository.saveAll(Listfoods);
+	}
+	
+	public String deleteFoodById(Integer id) {
+		foodRepository.deleteById(id);
+		return "Food removed!";
+	}
+	
+	public void deleteAllFoods() {
+		foodRepository.deleteAll();
+	}
+	
+	public Food updateFood(Food food) {
+		Food existingFood = foodRepository.findById(food.getId()).orElse(null);
+		existingFood.setName(food.getName());
+		existingFood.setDescription(food.getDescription());
+		existingFood.setPrice(food.getPrice());
+		return foodRepository.save(existingFood);
+	}
+		
 }

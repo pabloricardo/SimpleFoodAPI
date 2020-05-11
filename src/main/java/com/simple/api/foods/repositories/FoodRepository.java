@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.simple.api.foods.entities.Food;
 
 public interface FoodRepository extends JpaRepository<Food, Integer>{
+
+	Food findByName(String name);
 	
 
 }
