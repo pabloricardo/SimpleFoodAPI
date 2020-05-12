@@ -61,7 +61,7 @@ public class FoodResource {
 		return ResponseEntity.ok().body(obj);
 	}
 	
-	@DeleteMapping("/delteFood")
+	@DeleteMapping("/delteFood/{id}")
 	public ResponseEntity<String> deleteFood(@PathVariable Integer id) {
 		String obj = foodService.deleteFoodById(id);
 		return ResponseEntity.ok().body(obj);
