@@ -1,5 +1,6 @@
 package com.simple.api.foods.resources;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,13 @@ public class FoodResource {
 	
 	@Autowired
 	private FoodService foodService;
+
+	@GetMapping("")
+	public HashMap<String, Object> get() {
+		HashMap<String, Object> map = new HashMap<>();
+		map.put("Msg", "API Food");
+		return map;
+	}
 	
 	@GetMapping("/allFoods")
 	public ResponseEntity<List<Food>> findAll(){
